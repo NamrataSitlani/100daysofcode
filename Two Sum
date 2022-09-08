@@ -1,0 +1,10 @@
+#Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        nums_dict = {}
+        for i, num in enumerate(nums):
+            diff = target - num
+            if diff in nums_dict:
+                return[nums_dict[diff], i]
+            else:
+                nums_dict[num] = i
